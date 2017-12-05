@@ -255,7 +255,8 @@ mtcars$mpg
 # Enter this number for the quiz on the Udacity website.
 # https://www.udacity.com/course/viewer#!/c-ud651/l-729069797/e-804129314/m-830829287
 
-mean(mtcars$mpg)
+?mean
+
 
 
 

@@ -1,0 +1,11 @@
+1 ggplot(aes(group=quality,x=quality,y=alcohol),data=datawin)+
+geom_boxplot(aes(colour = quality))+
+ggtitle("品质、酒精度的箱线图")
+
+
+2 ggplot(aes(group=quality,x=quality,y=pH),data=datawin)+
+geom_boxplot(aes(colour = pH))
+
+
+ggplot(data = datawin, aes(x = quality)) +
+  geom_bar(width = 1, color = 'black',fill = I('blue'))

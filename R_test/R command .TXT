@@ -1,0 +1,65 @@
+1 ggplot(aes(group=quality,x=quality,y=alcohol),data=datawin)+
+geom_boxplot(aes(colour = quality))+
+ggtitle("品质、酒精度的箱线图")
+
+
+2 ggplot(aes(group=quality,x=quality,y=pH),data=datawin)+
+geom_boxplot(aes(colour = pH))
+
+
+ggplot(data = datawin, aes(x = quality)) +
+  geom_bar(width = 1, color = 'black',fill = I('orange'))
+  
+
+ggplot(wine, aes( x = 1, y = fixed.acidity ) ) + 
+geom_jitter(alpha = 0.1 ) +
+geom_boxplot(alpha = 0.2, color = 'red' ) +
+scale_y_continuous(lim = c(4,14))
+
+
+grid.arrange(ggplot(wine, aes( x = 1, y = fixed.acidity ) ) + 
+               geom_jitter(alpha = 0.1 ) +
+               geom_boxplot(alpha = 0.2, color = 'red' ) +
+               scale_y_continuous(lim = c(4,14)),
+ggplot(data = wine, aes(x = fixed.acidity)) +
+  geom_histogram(binwidth = 1, color = 'black',fill = I('orange')) + 
+  scale_x_continuous(lim = c(4,14)),ncol = 2)
+
+
+grid.arrange(ggplot(wine, aes( x = 1, y = fixed.acidity ) ) + 
+               geom_boxplot(alpha = 0.2, color = 'red' ),
+ggplot(data = wine, aes(x = fixed.acidity)) +
+  geom_histogram(binwidth = 1, color = 'black',fill = I('orange')))
+  
+grid.arrange(ggplot(wine, aes( x = 1, y = sulphates)) + 
+               geom_boxplot(alpha = 0.2, color = 'red' ) +
+               scale_y_continuous(lim = c(0.3,1.6)),
+ggplot(data = wine, aes(x = sulphates)) +
+  geom_histogram(binwidth = 0.1, color = 'black',fill = I('orange')) +
+  scale_x_continuous(lim = c(0.3,1.6)), ncol = 2)
+
+
+grid.arrange(ggplot(wine, aes( x = 1, y = pH)) + 
+               geom_boxplot(alpha = 0.2, color = 'red' ),
+ggplot(data = wine, aes(x = pH)) +
+  geom_histogram(binwidth = 0.1, color = 'black',fill = I('orange')), ncol = 2)
+  
+grid.arrange(ggplot(redwine, aes( x = 1, y = alcohol ) ) + 
+               geom_boxplot(alpha = 0.2, color = 'red' ),
+ggplot(data = redwine, aes(x = alcohol)) +
+  geom_histogram(binwidth = 1, color = 'black',fill = I('orange')))
+  
+
+grid.arrange(ggplot(redwine, aes( x = 1, y = volatile.acidity ) ) + 
+               geom_boxplot(alpha = 0.2, color = 'red' ),
+ggplot(data = redwine, aes(x = volatile.acidity)) +
+  geom_histogram(binwidth = 0.05, color = 'black',fill = I('orange')))
+
+
+grid.arrange(ggplot(wine, aes( x = 1, y = residual.sugar )) + 
+               geom_jitter(alpha = 0.1 ) +
+               geom_boxplot(alpha = 0.2, color = 'red' ) +
+               scale_y_continuous(lim = c(1,8)),
+ggplot(data = wine, aes(x = residual.sugar)) +
+  geom_histogram(binwidth = 0.1, color = 'black',fill = I('orange')) +
+  scale_x_continuous(lim = c(1,8)))

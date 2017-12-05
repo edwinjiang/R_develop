@@ -1,0 +1,147 @@
+---
+title: "R study"
+author: "edwin"
+date: "2017年11月24日"
+output: html_document
+---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+v1=1.8:3.8
+v2=1:3
+seq(1,9,length.out = 5)
+seq(1,9,length.out = 10)
+c(v1,v2)
+```
+### 行、列的向量连接
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+cbind(v1,v2)
+rbind(v1,v2)
+```
+
+### 向量计算
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+v1=1.8:3.8
+v2=1:3
+v1*2
+v2+3
+### 整除
+v2%/%3
+```
+
+### 矩阵
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+mat = matrix(c(2:16),nrow=4,ncol=4,byrow=TRUE)
+dim(mat)
+#取行数
+dim(mat)[1]
+#取烈数
+dim(mat)[2]
+#元素个数 
+length(mat)
+#行名、列名
+colnames(mat) = c('a','b','c','d')
+rownames(mat) = c('e','f','g','h')
+mat
+#删除第一行和第二列的数据再组合成新的矩阵
+mat[-1,-2]
+# 取矩阵元素
+mat[1,2]
+# 矩阵计算
+3*mat
+# 第一行成1，第二行成2，第三行成3，第四行成四
+mat*c(1:4)
+
+```
+### matric calculate
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# 转置
+t(mat)
+# 矩阵乘法
+mat%*%mat
+mat%*%c(1:4)
+# 求行列式 
+det(mat)
+# 求对角线元素
+diag(mat)
+```
+### 矩阵
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+mat2 = matrix(rnorm(16),nrow=4)
+# 求逆矩阵
+solve(mat2)
+# 求行、列的均值
+colMeans(mat2)
+rowMeans(mat2)
+# 求行、列的和
+colSums(mat2)
+rowSums(mat2)
+# 求标准差
+sd(mat2)
+```
+### DataFrame
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+getwd()
+data2 = data.frame(code=v1,value=v2)
+redwine <- read.csv('wineQualityReds.csv',sep=",",header=T)
+# 获取dataframe的元素
+data2$code
+data2$value
+```
+
+### 列表操作
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+list1= list(vector=v1,matrix=mat2,data=data2)
+list1
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
